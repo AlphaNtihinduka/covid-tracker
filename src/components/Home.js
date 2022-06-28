@@ -5,7 +5,6 @@ import microphone from '../images/microphone.png';
 import setting from '../images/settings.png';
 import covid from '../images/covid.png';
 import '../css/header.css';
-import Continent from './Continent';
 
 const Home = () => (
   <div>
@@ -25,7 +24,6 @@ const Home = () => (
       <div className="covid-text">COVID-19 WORLD UPDATES</div>
       <div className="img-container"><img src={covid} alt="covid" className="covid-img" /></div>
     </div>
-    <Continent />
   </div>
 );
 
