@@ -7,7 +7,6 @@ const fetchContinents = () => async (dispatch) => {
     .catch((error) => error.message);
   let fetchedData = await response.json();
   fetchedData = fetchedData.map((continent) => {
-    console.log('continent', continent);
     const obj = {
       id: continent.continent,
       countries: continent.countries,
