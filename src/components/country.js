@@ -20,7 +20,7 @@ const Country = () => (
       <div className="country-active">Active Cases: 10</div>
       <div className="country-recovered">Recovered Cases: 10</div>
       <div className="country-deaths">Death Cases: 10</div>
-      <div className="country-flag"><img  src="" alt="country flag" /></div>
+      <div className="country-flag"><img src="" alt="country flag" /></div>
     </div>
   </>
 );
