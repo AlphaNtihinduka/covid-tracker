@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../css/continent.css';
 
 const Continent = () => (
@@ -13,7 +13,7 @@ const Continent = () => (
         <p className="continent-cases">Cases: 10,203,809</p>
         <p className="continent-deaths">Deaths: 10,203,809</p>
         <div>
-          {/* <Link to="/Countries">See More</Link> */}
+          <Link to="/countries"><button type="button" className="button">See More</button></Link>
         </div>
       </div>
       <div className="continent-container">

@@ -1,0 +1,28 @@
+.search {
+  margin-left: 2rem;
+}
+
+.search-country-input {
+  width: 80%;
+  padding: 0.2rem 1rem;
+}
+
+.country-container {
+  font-size: 1.3rem;
+  padding: 10% 0 10% 10%;
+  background-color: green;
+  width: 100%;
+}
+
+.country-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 1rem;
+}
+
+.country-flag {
+  text-align: center;
+  margin-top: 1rem;
+}

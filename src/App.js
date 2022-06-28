@@ -1,38 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
-import Home from './components/Home';
-import Continents from './components/Continents';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-// import Countries from './components/Countries';
-
-const RouterWrapper = () => {
-  const routes = useRoutes([
-    { path: '/', element: <Home /> },
-    // { path: '/Countries', element: <Countries /> },
-  ]);
-  return routes;
-};
+import Countries from './components/Countries';
+import Continents from './components/Continents';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <RouterWrapper />
-      </Router>
-      <Continents />
+      <Routes>
+        <Route path="/" element={<Continents />} />
+        <Route path="/countries" element={<Countries />} />
+      </Routes>
     </div>
   );
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Router>
-//         <RouterWrapper />
-//       </Router>
-//       <Continents />
-//     </div>
-//   );
-// }
 
 export default App;
