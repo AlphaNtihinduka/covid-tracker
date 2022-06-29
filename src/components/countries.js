@@ -4,7 +4,6 @@ import Country from './Country';
 
 const Countries = () => {
   const { continent } = useParams();
-  // console.log('selectedContinent', continent);
   return (
     <>
       <Country continentName={continent} />

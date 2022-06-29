@@ -7,7 +7,6 @@ const fetchCountries = () => async (dispatch) => {
     .catch((error) => error.message);
   let fetchedData = await response.json();
   fetchedData = fetchedData.map((country) => {
-    // console.log('country', country);
     const obj = {
       countryName: country.country,
       activeCase: country.active,

@@ -15,21 +15,12 @@ const Country = ({ continentName }) => {
 
   const countryData = countriesArray
     .filter((country) => continentCountries.includes(country.countryName));
-  console.log('countryData', countryData);
-
-  // console.log('continentCountries', continentCountries);
 
   const [countrySearched, setCountry] = useState(false);
-  console.log('countrySearched', countrySearched);
-  // console.log('setcontinent', setContinent);
-
-  // console.log(continentsDataArray);
 
   const onChangeEvent = (e) => {
     const textInput = e.target.value.toLowerCase() || '';
-    console.log('textinput', textInput);
     const newStr = textInput[0].toUpperCase().concat(textInput.slice(1, textInput.length)) || '';
-    console.log('newstr', newStr);
     setCountry(countryData.filter(
       (continent) => continent.countryName.includes(newStr),
     ));
