@@ -5,6 +5,8 @@ import '../css/country.css';
 
 const Country = () => {
   const countriesData = useSelector((state) => state.countries);
+
+  const countriesArray = countriesData;
   console.log('countriesData', countriesData);
   return (
     <>
@@ -17,15 +19,32 @@ const Country = () => {
         />
         <button type="button">Search</button>
       </div>
+      {countriesArray.map((country) => (
+        <div className="country-container" key={country.id}>
+          <div className="country-flag-container">
+            <div className="country-name">{country.id}</div>
+            <span className="country-flag"><img src={country.flag} alt={`${country.id} flag`} /></span>
+          </div>
 
-      <div className="country-container">
-        <div className="country-name">Uganda</div>
-        <div className="country-cases">Cases: 200,302</div>
-        <div className="country-active">Active Cases: 10</div>
-        <div className="country-recovered">Recovered Cases: 10</div>
-        <div className="country-deaths">Death Cases: 10</div>
-        <div className="country-flag"><img src="" alt="country flag" /></div>
-      </div>
+          <div className="country-cases">
+            Critical:
+            {country.criticalCases}
+          </div>
+          <div className="country-active">
+            Active:
+            {country.activeCase}
+          </div>
+          <div className="country-deaths">
+            Deaths:
+            {country.Death}
+          </div>
+          <div className="country-recovered">
+            Today Cases:
+            {country.todayCases}
+          </div>
+        </div>
+      ))}
+
     </>
   );
 };

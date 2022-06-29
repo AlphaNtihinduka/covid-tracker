@@ -16,7 +16,7 @@ const fetchCountries = () => async (dispatch) => {
       Death: country.deaths,
       todayCases: country.todayCases,
       todayDeaths: country.todayDeaths,
-      flag: country.countryInfo.flag
+      flag: country.countryInfo.flag,
     };
     return obj;
   });

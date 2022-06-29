@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../css/continent.css';
@@ -8,12 +8,18 @@ const Continent = () => {
 
   const continentsDataArray = continentArray.continents;
 
+  console.log('continentsSataArray', continentsDataArray);
+
+  const [continent, setContinent] = useState(false);
+  console.log('continent', continent);
+  console.log('setcontinent', setContinent);
+
   console.log(continentsDataArray);
 
   return (
     <div className="continent-wrapper">
       <div className="search">
-        <input type="search" placeholder="Search Country ..." className="search-input" />
+        <input type="search" placeholder="Search Continent..." className="search-input" />
       </div>
       <div className="continents-container">
         {continentsDataArray.map((continent) => (
@@ -49,10 +55,10 @@ const Continent = () => {
               <span className="case-value">{continent.todayDeaths}</span>
             </p>
             <div>
-              <Link to="/countries"><button type="button" className="button">See More</button></Link>
+              <Link to={`/countries/${continent.countries}`}><button type="button" className="button">See More</button></Link>
+              {/* {`/country/${continent.id}`} */}
             </div>
           </div>
-
         ))}
       </div>
     </div>

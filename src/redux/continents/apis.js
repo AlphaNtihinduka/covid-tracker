@@ -6,19 +6,16 @@ const fetchContinents = () => async (dispatch) => {
   const response = await fetch(continentApi)
     .catch((error) => error.message);
   let fetchedData = await response.json();
-  fetchedData = fetchedData.map((continent) => {
-    const obj = {
-      id: continent.continent,
-      countries: continent.countries,
-      activeCase: continent.active,
-      criticalCases: continent.critical,
-      RecoveredCases: continent.recovered,
-      Death: continent.deaths,
-      todayCases: continent.todayCases,
-      todayDeaths: continent.todayDeaths,
-    };
-    return obj;
-  });
+  fetchedData = fetchedData.map((continent) => ({
+    id: continent.continent,
+    countries: continent.countries,
+    activeCase: continent.active,
+    criticalCases: continent.critical,
+    RecoveredCases: continent.recovered,
+    Death: continent.deaths,
+    todayCases: continent.todayCases,
+    todayDeaths: continent.todayDeaths,
+  }));
   dispatch({
     type: actions.SET_CONTINENTS,
     payload: fetchedData,
