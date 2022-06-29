@@ -1,13 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Home from './Home';
 import '../css/country.css';
 
-const Country = () => {
+const Country = ({ continentName }) => {
   const countriesData = useSelector((state) => state.countries);
 
   const countriesArray = countriesData;
-  console.log('countriesData', countriesData);
+
+  // const { selectedContinent } = useParams();
+  // console.log('selectedContinent', selectedContinent);
+
+  const continentArray = useSelector((state) => state.continents);
+  const continentCountries = continentArray.filter((continent) => continent.continentName === continentName)[0].countries;
+
+  const continentData = countriesArray.filter((country) => continentCountries.includes(country.countryName));
+
+  console.log('continentCountries', continentCountries);
   return (
     <>
       <Home />
@@ -19,11 +30,11 @@ const Country = () => {
         />
         <button type="button">Search</button>
       </div>
-      {countriesArray.map((country) => (
-        <div className="country-container" key={country.id}>
+      {continentData.map((country) => (
+        <div className="country-container" key={country.countryName}>
           <div className="country-flag-container">
-            <div className="country-name">{country.id}</div>
-            <span className="country-flag"><img src={country.flag} alt={`${country.id} flag`} /></span>
+            <div className="country-name">{country.countryName}</div>
+            <span className="country-flag"><img src={country.flag} alt={`${country.countryName} flag`} /></span>
           </div>
 
           <div className="country-cases">
@@ -47,6 +58,10 @@ const Country = () => {
 
     </>
   );
+};
+
+Country.propTypes = {
+  continentName: PropTypes.string.isRequired,
 };
 
 export default Country;

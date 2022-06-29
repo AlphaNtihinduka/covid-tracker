@@ -9,7 +9,7 @@ const fetchCountries = () => async (dispatch) => {
   fetchedData = fetchedData.map((country) => {
     // console.log('country', country);
     const obj = {
-      id: country.country,
+      countryName: country.country,
       activeCase: country.active,
       criticalCases: country.critical,
       RecoveredCases: country.recovered,

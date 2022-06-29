@@ -23,8 +23,8 @@ const Continent = () => {
       </div>
       <div className="continents-container">
         {continentsDataArray.map((continent) => (
-          <div key={continent.id} className="continent-container">
-            <p className="continent-title">{continent.id}</p>
+          <div key={continent.continentName} className="continent-container">
+            <p className="continent-title">{continent.continentName}</p>
             <p className="continent-cases">
               Active Cases:
 
@@ -55,7 +55,7 @@ const Continent = () => {
               <span className="case-value">{continent.todayDeaths}</span>
             </p>
             <div>
-              <Link to={`/countries/${continent.countries}`}><button type="button" className="button">See More</button></Link>
+              <Link to={`/countries/${continent.continentName}`}><button type="button" className="button">See More</button></Link>
               {/* {`/country/${continent.id}`} */}
             </div>
           </div>
