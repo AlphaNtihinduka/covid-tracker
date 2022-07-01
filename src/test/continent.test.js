@@ -7,6 +7,8 @@ import continentReducer from '../redux/continents/continents';
 import countryReducer from '../redux/countries/country';
 import Countries from '../components/Countries';
 import Continents from '../components/Continents';
+import { Router, BrowserRouter } from 'react-router-dom';
+import App from '../App'
 
 const mockStore = () => {
   const preloadedState = {
@@ -156,13 +158,18 @@ const mockStore = () => {
 
 describe('Testing the Continents component', () => {
   test('When data fetched from API all 6 continents are rendering succesfully', () => {
-    render(<Provider store={mockStore()}><Continents /></Provider>);
-    screen.debug()
-    expect(screen.getAllByText(continents).length).toBeGreaterThanOrEqual(2);
+    render(<Provider store={mockStore()}><BrowserRouter><Continents /></BrowserRouter> </Provider>);
+    expect(screen.getAllByText("North America").length).toBeGreaterThanOrEqual(1);
   });
 
-  // test('When data fetched from API all countries are rendering succesfully', () => {
-  //   render(<Provider store={mockStore()}><Countries /></Provider>);
-  //   expect(screen.getAllByText('See More').length).toBeGreaterThanOrEqual(2);
-  // });
+  test('When data fetched from API all 6 continents are rendering succesfully', () => {
+    render(<Provider store={mockStore()}><BrowserRouter><Continents /></BrowserRouter> </Provider>);
+    expect(screen.getAllByText("Asia").length).toBeGreaterThanOrEqual(1);
+  });
+
+  test('When data fetched from API all 6 continents are rendering succesfully', () => {
+    render(<Provider store={mockStore()}><BrowserRouter><App /></BrowserRouter> </Provider>);
+    fireEvent.click(screen.getAllByText("See More")[1])
+    expect(screen.getByText("Afghanistan")).toBeInTheDocument();
+  });
 });

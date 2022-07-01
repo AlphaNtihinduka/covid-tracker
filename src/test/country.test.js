@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import continentReducer from '../redux/continents/continents';
 import countryReducer from '../redux/countries/country';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockStore = () => {
   const preloadedState = {
@@ -152,6 +153,6 @@ const mockStore = () => {
 };
 
 test("testing country snapshot", () => {
-  const tree = renderer.create(<Provider store={mockStore()}><Country /></Provider>).toJSON();
+  const tree = renderer.create(<Provider store={mockStore()}><BrowserRouter><Country continentName="Asia" /></BrowserRouter></Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 })
