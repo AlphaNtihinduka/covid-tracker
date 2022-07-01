@@ -40,8 +40,7 @@ const Continent = () => {
             </p>
             <p className="continent-deaths">
               Recovered Cases:
-              {continent.todayDeaths}
-              <span className="case-value">{continent.todayDeaths}</span>
+              <span className="case-value">{continent.RecoveredCases}</span>
             </p>
             <div>
               <Link to={`/countries/${continent.continentName}`}><button type="button" className="button">See More</button></Link>

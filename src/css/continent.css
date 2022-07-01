@@ -14,18 +14,22 @@
 
 .continents-container {
   display: grid;
-  grid-template-columns: 50% 50%;
   gap: 0.6rem;
 }
 
 .continent-container {
   background-color: #ff9285;
+  box-shadow: inset 3px 3px 5px rgba(94, 184, 121, 0.288);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+}
+
+.continent-container:hover {
+  box-shadow: -3px -3px 7px grey;
 }
 
 .continent-title {
@@ -35,4 +39,20 @@
 
 .case-value {
   margin-left: 0.5rem;
+}
+
+.button {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 600px) {
+  .continents-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .continents-container {
+    grid-template-columns: 33% 33% 33%;
+  }
 }

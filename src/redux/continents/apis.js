@@ -14,7 +14,6 @@ const fetchContinents = () => async (dispatch) => {
     RecoveredCases: continent.recovered,
     Death: continent.deaths,
     todayCases: continent.todayCases,
-    todayDeaths: continent.todayDeaths,
   }));
   dispatch({
     type: actions.SET_CONTINENTS,

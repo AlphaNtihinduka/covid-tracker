@@ -41,6 +41,13 @@
   max-width: 98%;
 }
 
+.covid-text {
+  color: #ff5943;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-left: 2rem;
+}
+
 @media (min-width: 786px) {
   .banner {
     flex-direction: row;
