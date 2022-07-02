@@ -10,7 +10,13 @@
 .country-container {
   font-size: 1.3rem;
   padding: 2% 0 2% 3%;
-  background-color: green;
+  background-color: #ff9285;
+  box-shadow: inset 7px 7px 9px rgba(94, 184, 121, 0.288);
+  margin: 0 1rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin-bottom: 1rem;
 }
