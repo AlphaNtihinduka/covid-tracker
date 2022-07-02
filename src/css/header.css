@@ -1,0 +1,61 @@
+.header-contaier {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  background-color: #ff5943;
+}
+
+.links {
+  text-decoration: none;
+  position: relative;
+}
+
+.year2022 {
+  position: absolute;
+  bottom: 0.5rem;
+}
+
+.home-return {
+  font-size: 1.4rem;
+}
+
+.icons {
+  height: 2rem;
+  width: 2rem;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 17rem;
+  align-items: center;
+  background-image: url('../images/covidpeople.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.covid-img {
+  height: 10rem;
+  max-width: 98%;
+}
+
+.covid-text {
+  color: #ff5943;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-left: 2rem;
+}
+
+@media (min-width: 786px) {
+  .banner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .covid-img {
+    height: 10rem;
+    max-width: 25rem;
+  }
+}

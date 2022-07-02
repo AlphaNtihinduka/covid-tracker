@@ -1,0 +1,2 @@
+export const SET_CONTINENTS = 'SET_CONTINENTS';
+export const SET_COUNTRIES = 'SET_COUNTRIES';
