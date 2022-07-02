@@ -1,8 +1,6 @@
-![](https://img.shields.io/badge/Book Store CMS-blueviolet)
+# Covid-19 Tracker
 
-# Book Store
-
-BookStore is online book Library build using react.js
+Covid-19 Tracker is online book Library build using react.js that give Covid cases data for the world
 
 <p align="center">
   <img src="./src/images/covidtracker.jpg" alt="Calculator" width="300px" />
