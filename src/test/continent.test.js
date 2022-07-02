@@ -3,12 +3,11 @@ import {
 } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter } from 'react-router-dom';
 import continentReducer from '../redux/continents/continents';
 import countryReducer from '../redux/countries/country';
-import Countries from '../components/Countries';
 import Continents from '../components/Continents';
-import { Router, BrowserRouter } from 'react-router-dom';
-import App from '../App'
+import App from '../App';
 
 const mockStore = () => {
   const preloadedState = {
@@ -54,13 +53,13 @@ const mockStore = () => {
           'St. Barth',
           'Trinidad and Tobago',
           'Turks and Caicos Islands',
-          'USA'
+          'USA',
         ],
         activeCase: 5068821,
         criticalCases: 8643,
         RecoveredCases: 98848360,
         Death: 1487295,
-        todayCases: 23182
+        todayCases: 23182,
       },
       {
         continentName: 'Asia',
@@ -114,15 +113,15 @@ const mockStore = () => {
           'UAE',
           'Uzbekistan',
           'Vietnam',
-          'Yemen'
+          'Yemen',
         ],
         activeCase: 4123989,
         criticalCases: 10525,
         RecoveredCases: 155682838,
         Death: 1439320,
-        todayCases: 96561
+        todayCases: 96561,
       },
-   ],
+    ],
     countries: [
       {
         countryName: 'Afghanistan',
@@ -132,7 +131,7 @@ const mockStore = () => {
         Death: 7723,
         todayCases: 98,
         todayDeaths: 1,
-        flag: 'https://disease.sh/assets/img/flags/af.png'
+        flag: 'https://disease.sh/assets/img/flags/af.png',
       },
       {
         countryName: 'Albania',
@@ -142,7 +141,7 @@ const mockStore = () => {
         Death: 3499,
         todayCases: 0,
         todayDeaths: 0,
-        flag: 'https://disease.sh/assets/img/flags/al.png'
+        flag: 'https://disease.sh/assets/img/flags/al.png',
       },
     ],
   };
@@ -158,18 +157,33 @@ const mockStore = () => {
 
 describe('Testing the Continents component', () => {
   test('When data fetched from API all 6 continents are rendering succesfully', () => {
-    render(<Provider store={mockStore()}><BrowserRouter><Continents /></BrowserRouter> </Provider>);
-    expect(screen.getAllByText("North America").length).toBeGreaterThanOrEqual(1);
+    render(
+      <Provider store={mockStore()}>
+        <BrowserRouter><Continents /></BrowserRouter>
+        {' '}
+      </Provider>,
+    );
+    expect(screen.getAllByText('North America').length).toBeGreaterThanOrEqual(1);
   });
 
   test('When data fetched from API all 6 continents are rendering succesfully', () => {
-    render(<Provider store={mockStore()}><BrowserRouter><Continents /></BrowserRouter> </Provider>);
-    expect(screen.getAllByText("Asia").length).toBeGreaterThanOrEqual(1);
+    render(
+      <Provider store={mockStore()}>
+        <BrowserRouter><Continents /></BrowserRouter>
+        {' '}
+      </Provider>,
+    );
+    expect(screen.getAllByText('Asia').length).toBeGreaterThanOrEqual(1);
   });
 
   test('When data fetched from API all 6 continents are rendering succesfully', () => {
-    render(<Provider store={mockStore()}><BrowserRouter><App /></BrowserRouter> </Provider>);
-    fireEvent.click(screen.getAllByText("See More")[1])
-    expect(screen.getByText("Afghanistan")).toBeInTheDocument();
+    render(
+      <Provider store={mockStore()}>
+        <BrowserRouter><App /></BrowserRouter>
+        {' '}
+      </Provider>,
+    );
+    fireEvent.click(screen.getAllByText('See More')[1]);
+    expect(screen.getByText('Afghanistan')).toBeInTheDocument();
   });
 });
