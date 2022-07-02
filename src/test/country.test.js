@@ -2,6 +2,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter } from 'react-router-dom';
+// import Country from '../components/Country';
 import Country from '../components/Country';
 import continentReducer from '../redux/continents/continents';
 import countryReducer from '../redux/countries/country';
