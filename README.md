@@ -6,6 +6,9 @@ Covid-19 Tracker is online book Library build using react.js that give Covid cas
   <img src="./src/images/covidtracker.jpg" alt="Calculator" width="300px" />
 </p>
 
+## Live demo
+[Netflify Deploy](https://amazing-starship-cbd105.netlify.app/)
+
 ## Built With
 
 - HTML, CSS
